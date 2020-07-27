@@ -10,13 +10,8 @@ namespace CustomListClassProject
     {
         static void Main(string[] args)
         {
-            List<int> thing = new List<int>();
+                    
 
-            thing.Add(1);
-            thing.Add(2);
-
-            Console.ReadLine();
-            
         }
     }
 }
