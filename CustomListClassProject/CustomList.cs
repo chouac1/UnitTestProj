@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.PerformanceData;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -36,6 +37,20 @@ namespace CustomListClassProject
 
         //Member Methods
         
-        //build add method
+        public void Add(T valuePassThru)
+        {
+
+            if(count < Capacity)
+            {
+                count++;
+                
+            }
+            else if(count > Capacity)
+            {
+                Capacity++;
+            }
+
+            
+        }
     }
 }
