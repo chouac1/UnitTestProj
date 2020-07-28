@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.Tools.Schema.Sql.Dac.Data;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.PerformanceData;
 using System.Linq;
@@ -37,20 +38,32 @@ namespace CustomListClassProject
 
         //Member Methods
         
-        public void Add(T valuePassThru)
+        public void Add(T value)
         {
+            //create a temp array
+            //loop values back into the array bc they are null
 
-            if(count < Capacity)
-            {
-                count++;
+                        
+                if (count == Capacity)
+                {
+
+                               
+                T[] items2 = new T[Capacity + Capacity];
                 
-            }
-            else if(count > Capacity)
-            {
-                Capacity++;
-            }
+                for (int i = 0; i < count; i++)
+                {
+                        items2[i] = items[i];
+                        count++;
+                }
+     
+                }
+
+                items[count] = value;
+                count++;
+
 
             
+                       
         }
     }
 }
