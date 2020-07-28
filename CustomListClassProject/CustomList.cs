@@ -48,22 +48,26 @@ namespace CustomListClassProject
                 {
 
                                
-                T[] items2 = new T[Capacity + Capacity];
+                    T[] items2 = new T[Capacity + Capacity];
                 
-                for (int i = 0; i < count; i++)
-                {
-                        items2[i] = items[i];
-                        count++;
-                }
+                    for (int i = 0; i < count; i++)
+                    {
+
+                            items2[i] = items[i];
+                                                        
+                        
+                    }
+
+                items = items2;
      
+                
                 }
 
                 items[count] = value;
                 count++;
-
-
-            
-                       
+                      
         }
+
+
     }
 }
