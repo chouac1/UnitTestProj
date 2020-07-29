@@ -68,6 +68,36 @@ namespace CustomListClassProject
                       
         }
 
+        public void Remove(T value)
+        {
+            //create a temp array
+            //loop values back into the array bc they are null
+
+
+            if (count == Capacity)
+            {
+
+
+                T[] items2 = new T[Capacity + Capacity];
+
+                for (int i = 0; i < count; i++)
+                {
+
+                    items2[i] = items[i];
+
+
+                }
+
+                items = items2;
+
+
+            }
+
+            items[count] = value;
+            count--;
+
+        }
+
 
     }
 }
