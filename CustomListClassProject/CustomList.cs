@@ -36,26 +36,25 @@ namespace CustomListClassProject
 
         }
 
+        public T this[int index]
+        {
+            get => items[index];
+            set => items[index] = value;
+        }
+
         //Member Methods
-        
+
         public void Add(T value)
         {
-            //create a temp array
-            //loop values back into the array bc they are null
-
-                        
+            
                 if (count == Capacity)
                 {
-
-                               
-                    T[] items2 = new T[Capacity + Capacity];
+                Capacity = Capacity * 2;           
+                T[] items2 = new T[Capacity];
                 
                     for (int i = 0; i < count; i++)
                     {
-
-                            items2[i] = items[i];
-                                                        
-                        
+                            items2[i] = items[i]; 
                     }
 
                 items = items2;
@@ -70,34 +69,32 @@ namespace CustomListClassProject
 
         public void Remove(T value)
         {
-            //create a temp array
-            //loop values back into the array bc they are null
+            T[] items2 = new T[Capacity];
+            bool hasFound = false;
+            int originalCount = count;
 
-
-            if (count == Capacity)
+            for (int i = 0; i < originalCount; i++)                  
             {
-
-
-                T[] items2 = new T[Capacity + Capacity];
-
-                for (int i = 0; i < count; i++)
+                if (items[i].Equals(value) && hasFound == false)
                 {
-
-                    items2[i] = items[i];
-
-
+                    hasFound = true;
+                    count--;
+                }
+                else 
+                {
+                    if(hasFound == true)
+                    {
+                        items2[i-1] = items[i];
+                    }
+                    else
+                    {
+                        items2[i] = items[i];
+                    }
                 }
 
-                items = items2;
-
-
             }
-
-            items[count] = value;
-            count--;
-
-        }
-
-
+            items = items2;
+        } 
+        
     }
 }
