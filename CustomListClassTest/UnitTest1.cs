@@ -497,7 +497,7 @@ namespace CustomListClassTest
         //ToString Test ---------------------------------------------
 
         [TestMethod]
-        public void ToStringMethod_Add5Ints_Returns1StringWith5Numbers()
+        public void ToStringMethod_Add5Ints_Returns1StringWith12345()
         {
             //Arrange
             CustomList<int> list = new CustomList<int>();
@@ -510,6 +510,52 @@ namespace CustomListClassTest
             list.Add(3);
             list.Add(4);
             list.Add(5);
+
+            actual = list.ToString();
+
+
+            //Asset
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToStringMethod_Add5Ints_Returns1StringWith1345()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>();
+            string expected = "1345";
+            string actual;
+
+            //Action
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            list.Add(5);
+            list.Remove(2);
+
+            actual = ToString();
+
+
+            //Asset
+            Assert.AreEqual(expected, actual);
+        }
+        
+        [TestMethod]
+        public void ToStringMethod_Add5Ints_Returns1StringWith123456()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>();
+            string expected = "123456";
+            string actual;
+
+            //Action
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            list.Add(5);
+            list.Add(6);
 
             actual = ToString();
 
@@ -518,11 +564,12 @@ namespace CustomListClassTest
             Assert.AreEqual(expected, actual);
         }
 
-        public void ToStringMethod_Add5Ints_Returns1StringWith5Numbers()
+        [TestMethod]
+        public void ToStringMethod_Add5Ints_Returns1StringWith123()
         {
             //Arrange
             CustomList<int> list = new CustomList<int>();
-            string expected = "12345";
+            string expected = "123";
             string actual;
 
             //Action
@@ -531,6 +578,8 @@ namespace CustomListClassTest
             list.Add(3);
             list.Add(4);
             list.Add(5);
+            list.Remove(5);
+            list.Remove(4);
 
             actual = ToString();
 
@@ -539,11 +588,12 @@ namespace CustomListClassTest
             Assert.AreEqual(expected, actual);
         }
 
-        public void ToStringMethod_Add5Ints_Returns1StringWith5Numbers()
+        [TestMethod]
+        public void ToStringMethod_Add5Ints_Returns1StringWith12345678()
         {
             //Arrange
             CustomList<int> list = new CustomList<int>();
-            string expected = "12345";
+            string expected = "12345678";
             string actual;
 
             //Action
@@ -552,48 +602,9 @@ namespace CustomListClassTest
             list.Add(3);
             list.Add(4);
             list.Add(5);
-
-            actual = ToString();
-
-
-            //Asset
-            Assert.AreEqual(expected, actual);
-        }
-
-        public void ToStringMethod_Add5Ints_Returns1StringWith5Numbers()
-        {
-            //Arrange
-            CustomList<int> list = new CustomList<int>();
-            string expected = "12345";
-            string actual;
-
-            //Action
-            list.Add(1);
-            list.Add(2);
-            list.Add(3);
-            list.Add(4);
-            list.Add(5);
-
-            actual = ToString();
-
-
-            //Asset
-            Assert.AreEqual(expected, actual);
-        }
-
-        public void ToStringMethod_Add5Ints_Returns1StringWith5Numbers()
-        {
-            //Arrange
-            CustomList<int> list = new CustomList<int>();
-            string expected = "12345";
-            string actual;
-
-            //Action
-            list.Add(1);
-            list.Add(2);
-            list.Add(3);
-            list.Add(4);
-            list.Add(5);
+            list.Add(6);
+            list.Add(7);
+            list.Add(8);
 
             actual = ToString();
 

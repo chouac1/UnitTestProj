@@ -94,7 +94,17 @@ namespace CustomListClassProject
 
             }
             items = items2;
-        } 
-        
+        }
+
+        //public override void ToString(T value)
+        //{
+        //    string newMethod = value;
+        //    for (int i = 0; i < count; i++)
+        //    {
+        //        newMethod = items[i];
+        //        yield return value;
+        //    }
+        //}
+
     }
 }
