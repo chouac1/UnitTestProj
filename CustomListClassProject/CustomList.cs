@@ -105,19 +105,9 @@ namespace CustomListClassProject
             {
                 tempString[i] = intToString[i];
             }
-            
             string newString = string.Join("", tempString);
             return newString;
         }
-
-        //public int AddTwoInts(List<int> one, List<int> two)
-        //{
-        //    List<int> one = new List<int>();
-        //    List<int> two = new List<int>();
-        //    List<int> listOfTwo = List<int> one + List<int> two;
-
-        //    return List<int> listOfTwo;
-        //}
 
     }
 }
