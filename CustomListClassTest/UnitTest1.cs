@@ -501,7 +501,7 @@ namespace CustomListClassTest
         {
             //Arrange
             CustomList<int> list = new CustomList<int>();
-            string expected = "12345";
+            string expected = "1234";
             string actual;
 
             //Action
@@ -509,7 +509,7 @@ namespace CustomListClassTest
             list.Add(2);
             list.Add(3);
             list.Add(4);
-            list.Add(5);
+                       
 
             actual = list.ToString();
 
@@ -534,7 +534,7 @@ namespace CustomListClassTest
             list.Add(5);
             list.Remove(2);
 
-            actual = ToString();
+            actual = list.ToString();
 
 
             //Asset
@@ -557,7 +557,7 @@ namespace CustomListClassTest
             list.Add(5);
             list.Add(6);
 
-            actual = ToString();
+            actual = list.ToString();
 
 
             //Asset
@@ -581,7 +581,7 @@ namespace CustomListClassTest
             list.Remove(5);
             list.Remove(4);
 
-            actual = ToString();
+            actual = list.ToString();
 
 
             //Asset
@@ -606,7 +606,7 @@ namespace CustomListClassTest
             list.Add(7);
             list.Add(8);
 
-            actual = ToString();
+            actual = list.ToString();
 
 
             //Asset

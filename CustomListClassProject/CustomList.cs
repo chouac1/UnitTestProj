@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.Tools.Schema.Sql.Dac.Data;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Diagnostics.PerformanceData;
 using System.Linq;
@@ -96,14 +97,22 @@ namespace CustomListClassProject
             items = items2;
         }
 
-        //public override void ToString(T value)
+        public override string ToString()
+        {
+                      
+            string[] intToString = items.Select(x => x.ToString()).ToArray();        
+            string newString = string.Join("", intToString);
+
+            return newString;
+        }
+
+        //public int AddTwoInts(List<int> one, List<int> two)
         //{
-        //    string newMethod = value;
-        //    for (int i = 0; i < count; i++)
-        //    {
-        //        newMethod = items[i];
-        //        yield return value;
-        //    }
+        //    List<int> one = new List<int>();
+        //    List<int> two = new List<int>();
+        //    List<int> listOfTwo = List<int> one + List<int> two;
+
+        //    return List<int> listOfTwo;
         //}
 
     }
