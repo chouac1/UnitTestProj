@@ -99,10 +99,14 @@ namespace CustomListClassProject
 
         public override string ToString()
         {
-                      
-            string[] intToString = items.Select(x => x.ToString()).ToArray();        
-            string newString = string.Join("", intToString);
-
+            string[] tempString = new string[count];
+            string[] intToString = items.Select(x => x.ToString()).ToArray();
+            for (int i = 0; i < count; i++)
+            {
+                tempString[i] = intToString[i];
+            }
+            
+            string newString = string.Join("", tempString);
             return newString;
         }
 
